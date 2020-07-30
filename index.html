@@ -1,0 +1,161 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="assets/css/materialize.css"/>
+	<link rel="stylesheet" href="assets/css/index.css"/>
+</head>
+<body>
+	<nav class="nav-extended">
+		<div class="nav-wrapper container center-align"><a id="logo-container" href="#" class="brand-logo" style="vertical-align:middle;"><img width="50%" src="https://coppel-dev.ra1ndev.xyz/cob_bcpl/assets/img/logo.png"/> <br> <span style="color: #006eba; font-size: 20px; font-family:'Product Sans Regular';">Cobranza Telefónica</span></a></div>
+		<div class="nav-content container">
+			<ul class="tabs">
+				<li class="tab" id="tabValidacion"><a href="#validacion">Validación</a></li>
+				<li class="tab disabled" id="tabCobranza"><a href="#cobranza">Cobranza</a></li>
+				<li class="tab disabled" id="tabFin"><a href="#fin">Fin</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div id="validacion" style="font-family:'Product Sans Regular';">
+		<div class="container pt-10">
+		  <div class="row card">
+		    <div id="test1" class="col s12">
+		      <h4 class='header center-align'>Validación Telefónica</h4>
+		      <div class="row">
+			    <form class="col s12" autocomplete="off">
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <input disabled value="-" id="nombre" type="text" class="validate">
+			          <label for="nombre">Nombre Completo</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s6">
+			          <input disabled value="-" id="cliente" type="text" class="validate">
+			          <label for="cliente">Cliente</label>
+			        </div>
+			        <div class="input-field col s6">
+			          <input disabled value="-" id="telefono" type="text" class="validate">
+			          <label for="telefono">Telefono Contestó</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s4">
+			          <input disabled value="-" id="edo_civil" type="text" class="validate">
+			          <label for="edo_civil">Estado Civil</label>
+			        </div>
+			        <div class="input-field col s4">
+			          <input disabled value="-" id="sexo" type="text" class="validate">
+			          <label for="sexo">Sexo</label>
+			        </div>
+			        <div class="input-field col s4">
+			          <input disabled value="-" id="fecha_alta" type="text" class="validate">
+			          <label for="fecha_alta">Fecha Alta</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s12">
+						<select id="quien_contesto" class="validate">
+						  <option value="0" disabled selected>Seleccione</option>
+						  <option value="Cliente">Cliente</option>
+						  <option value="Padres / Conyuge">Padres / Conyuge</option>
+						  <option value="Otra persona">Otra persona</option>
+						  <option value="Colgó">Colgó</option>
+						  <option value="No responden">No responden</option>
+						  <option value="Me dejaron en espera">Me dejaron en espera</option>
+						  <option value="Buzón">Buzón</option>
+						  <option value="Cliente Falleció">Cliente Falleció</option>
+						</select>
+			          <label for="quien_contesto">Quien contestó?</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s4">
+			        </div>
+			        <div class="input-field col s4 center-align">
+			        	<a class="waves-effect waves-light btn disabled" id="btnValidacion">Aceptar</a>
+			        </div>
+			        <div class="input-field col s4">
+			        </div>
+			      </div>
+			    </form>
+			  </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<div id="cobranza" style="font-family:'Product Sans Regular';">
+		<div class="container pt-10">
+		  <div class="row card">
+		    <div id="test1" class="col s12">
+		      <h4 class='header center-align'>Cobranza Telefónica</h4>
+		      <div class="row">
+			    <form class="col s12" autocomplete="off">
+					<table class="striped centered">
+						<thead>
+							<tr>
+								<th>Producto</th>
+								<th>Salda con</th>
+								<th>Minimo a pagar</th>
+								<th>Vencido</th>
+								<th>Abonos Vencidos</th>
+							</tr>
+						</thead>
+
+						<tbody id="tablaCuentas">
+						</tbody>
+					</table>
+			      <div class="row">
+			        <div class="input-field col s12">
+						<select id="fin_gestion" class="validate">
+						  <option value="0" disabled selected>Seleccione</option>
+						  <option value="1">Convenio</option>
+						  <option value="2">Negativa de Pago</option>
+						  <option value="3">No define</option>
+						  <option value="4">Aclaración</option>
+						  <option value="5">Ya abonó</option>
+						  <option value="7">Llamar después</option>
+						  <option value="8">Colgó</option>
+						</select>
+			          <label for="fin_gestion">Fin de gestión</label>
+			        </div>
+			      </div>
+					<div class="row" id="datosConvenio" style="display: none;">
+						<div class="input-field col s6 center-align">
+				          <input id="importe_convenio" type="number" class="validate">
+				          <label for="importe_convenio">Importe</label>
+						</div>
+						<div class="input-field col s6 center-align">
+				          <input id="fecha_convenio" type="text" class="validate datepicker">
+				          <label for="fecha_convenio">Fecha</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s4">
+						</div>
+						<div class="input-field col s4 center-align">
+							<a class="waves-effect waves-light btn disabled" id="btnCobranza">Aceptar</a>
+						</div>
+						<div class="input-field col s4">
+						</div>
+					</div>
+			    </form>
+			  </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<div id="fin" style="font-family:'Product Sans Regular';">
+		<div class="container pt-10">
+		  <div class="row card">
+		    <div id="test1" class="col s12">
+		      <h4 class='header center-align'>Gestión finalizada correctamente.</h4>
+		    </div>
+		  </div>
+		</div>
+	</div>
+	<script src="assets/js/jquery-3.5.1.js"></script>
+	<script src="assets/js/jquery-ui.js"></script>
+	<script src="assets/js/materialize.js"></script>
+	<script src="assets/js/index.js"></script>
+</body>
+</html>
